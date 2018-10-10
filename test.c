@@ -14,8 +14,9 @@ int main(){
   list->next = 0;
   printf("New linked list:\n");
   print_list(list);
-  while(i<5){
-    list = insert_front(head,rand()%1000);
+  int x = 5
+  while(x<5){
+    list = insert_front(list,rand()%1000);
   }
   printf("Printing list:\n");
   print_list(list);
