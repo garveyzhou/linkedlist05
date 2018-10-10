@@ -1,14 +1,15 @@
-default: test.o link.o
-	gcc -o test.o link.o
+all: link.o test.o link.h
+	gcc link.o test.o
 
-test.o: test.c link.h
-	gcc -c test.c
-
-link.o: link.c link.h
-	gcc -c link.c
-
-run:
+run: all
 	./a.out
 
+link.o: link.c
+	gcc -c link.c
+
+test.o: test.c
+	gcc -c test.c
+
 clean:
-	rm -f *.exe *.out *~ *.o
+	rm *.o -f
+	rm a.out -f
