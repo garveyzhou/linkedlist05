@@ -1,14 +1,14 @@
-default: list.o link.o
-	gcc -o test list.o link.o
+default: test.o link.o
+	gcc -o test.o link.o
 
-list.o: list.c link.h
+test.o: test.c link.h
 	gcc -c list.c
 
 link.o: link.c link.h
 	gcc -c link.c
 
 run:
-	./test
+	./a.out
 
 clean:
 	rm -f *.exe *.out *~ *.o
