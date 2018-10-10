@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "link.h"
-
 
 void print_list(struct node *x){
   struct node *head = x;
