@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "link.h"
 
-struct node { int i; struct node *next;};
 
 void print_list(struct node *x){
   struct node *head = x;
@@ -12,20 +11,20 @@ void print_list(struct node *x){
   }
 }
 
-struct node * insert_front(struct node *x, int new){
+struct node * insert_front(struct node * x, int new){
   struct node *new_node = malloc(sizeof(struct node));
   new_node->i = new;
   new_node->next = x;
   return new_node;
 }
 
-struct node * free_list(struct node *x){
+struct node * free_list(struct node * x){
   struct node * temp;
   struct node * head = x;
   while(head){
     temp = head->next;
     free(head);
-    mark = temp;
+    head = temp;
   }
   return head;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "link.h"
+
 
 int main(){
   srand(time(NULL));
@@ -14,14 +14,15 @@ int main(){
   list->next = 0;
   printf("New linked list:\n");
   print_list(list);
-  int x = 5
+  int x = 0;
   while(x<5){
     list = insert_front(list,rand()%1000);
+    x++;
   }
-  printf("Printing list:\n");
+  printf("\nPrinting list:\n");
   print_list(list);
   
-  printf("Free list:\n");
+  printf("\nFree list:\n");
   list = free_list(list);
     
   printf("Printing freed list\n");
